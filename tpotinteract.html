@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #00d4ff, #0066cc);
+            color: #fff;
+        }
+
+       
+        #username-input {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        label,
+        input,
+        button {
+            font-size: 1rem;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+            text-align: center;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin-top: 10px;
+            background-color: #005bb5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #003f8a;
+        }
+
+        
+        .image-container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .image-container img {
+            margin-bottom: 10px;
+        }
+
+        .message {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="username-input">
+        <label for="username">Input Username:</label><br>
+        <input type="text" id="username" required><br>
+        <button onclick="showImages()">Enter</button>
+    </div>
+
+    <div class="image-container" id="imageContainer">
+        <div class="message" id="messagePin"></div>
+        <img src="Pin.webp" alt="Pin from TPOT" width="100,100">
+
+        <div class="message" id="messageGaty"></div>
+        <img src="Gaty.webp" alt="Gaty from TPOT" width="100,100">
+
+        <div class="message" id="messageBeep"></div>
+        <img src="beepshocked.svg" alt="Beepbeep62 from ObjectOval" width="100,100">
+    </div>
+
+    <script>
+        function showImages() {
+            const username = document.getElementById("username").value;
+            if (username) {
+                document.getElementById("messagePin").textContent = `${username}, you don't need immunity, everyone loves you! - Pin, BFDIA 4: "Zeeky Boogy Doog"`;
+                document.getElementById("messageGaty").textContent = `${username}, I didn't know list of Battle for Dream Island characters was THIS long! - Gaty, BFDI:TPOT 12: What's Up Bell's String?`;
+                document.getElementById("messageBeep").textContent = `${username}, I think you were onto something there. - BeepBeep, ObjectOval 2: Delay The Inevitable`;
+
+                document.getElementById("username-input").style.display = "none";
+                document.getElementById("imageContainer").style.display = "flex";
+            }
+        }
+    </script>
+</body>
+
+</html>
